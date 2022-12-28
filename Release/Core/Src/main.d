@@ -42,7 +42,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Middlewares/Third_Party/FatFs/src/ff.h ../FATFS/Target/user_diskio.h \
  ../Core/Src/../../Keyboard/keyboard.h \
  ../Core/Src/../../Display/display.h ../Core/Src/../../Display/fonts.h \
- ../Core/Src/../../Display/st7789.h \
+ ../Core/Src/../../Display/st7789.h ../Core/Src/../../Display/ili9341.h \
  ../Core/Src/../../Filemanager/filemanager.h \
  F:/stm32f401ccu6_filemanager/Display/display.h \
  ../Core/Src/../../MyString/mystring.h
@@ -95,6 +95,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../../Display/display.h:
 ../Core/Src/../../Display/fonts.h:
 ../Core/Src/../../Display/st7789.h:
+../Core/Src/../../Display/ili9341.h:
 ../Core/Src/../../Filemanager/filemanager.h:
 F:/stm32f401ccu6_filemanager/Display/display.h:
 ../Core/Src/../../MyString/mystring.h:

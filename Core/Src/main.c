@@ -50,6 +50,7 @@
 #include "../../Keyboard/keyboard.h" 	   //модуль работы с кнопками
 #include "../../Display/display.h"  	   //драйвер работы с дисплеями по SPI
 #include "../../Display/st7789.h"	  	   //драйвер для дисплея ST7789
+#include "../../Display/ili9341.h"	  	   //драйвер для дисплея ST7789
 #include "../../Filemanager/filemanager.h" //модуль файлового менеджера
 #include "../../MyString/mystring.h"	   //библиотека работы со строками
 /* USER CODE END Includes */
@@ -157,6 +158,8 @@ int main(void)
   #ifndef LCD_DYNAMIC_MEM
   LCD_Handler lcd1;
 #endif
+
+//для дисплея на контроллере st7789
   LCD = LCD_DisplayAdd( LCD,
 #ifndef LCD_DYNAMIC_MEM
 		   	   	   	   	&lcd1,
@@ -174,6 +177,26 @@ int main(void)
 						&spi_con,
 						LCD_DATA_16BIT_BUS,
 						bkl_data				   );
+
+/*
+  //для дисплея на контроллере ili9341
+  LCD = LCD_DisplayAdd( LCD,
+#ifndef  LCD_DYNAMIC_MEM
+		   	   	   	   	 &lcd1,
+#endif
+		   	   	   	   	 240,
+						 320,
+						 ILI9341_CONTROLLER_WIDTH,
+						 ILI9341_CONTROLLER_HEIGHT,
+						 PAGE_ORIENTATION_PORTRAIT_MIRROR,
+						 ILI9341_Init,
+						 ILI9341_SetWindow,
+						 ILI9341_SleepIn,
+						 ILI9341_SleepOut,
+						 &spi_con,
+						 LCD_DATA_16BIT_BUS,
+						 bkl_data				   );
+*/
   LCD_Handler *lcd = LCD; //указатель на первый дисплей в списке
   LCD_Init(lcd);
   LCD_Fill(lcd, COLOR_BLACK);
