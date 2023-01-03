@@ -21,7 +21,7 @@ Copyright (C) 2022, VadRov, all right reserved.
 # Проект базируется на библиотеках автора:
 - драйвер работы с SD-картой по SPI c использованием DMA (https://www.youtube.com/watch?v=z99bLhlnukM)
 - драйвер для работы с дисплеями по SPI с использованием DMA (https://www.youtube.com/watch?v=8tIJ16riJqo)
-- модуль для работы с кнопками с фильтром дребезга, автоповтором и буферризацией ввода (https://www.youtube.com/watch?v=e-w5HS75neg)
+- модуль для работы с кнопками с фильтром дребезга, автоповтором и буферизацией ввода (https://www.youtube.com/watch?v=e-w5HS75neg)
 - процедуры работы со строками.
 
 В видео рассказано о проекте:
