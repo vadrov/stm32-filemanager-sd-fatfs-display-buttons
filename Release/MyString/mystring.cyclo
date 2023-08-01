@@ -1,0 +1,9 @@
+../MyString/mystring.c:19:6:my_strcpy_fixed_sym	3
+../MyString/mystring.c:59:6:my_strcpy	2
+../MyString/mystring.c:80:10:my_strlen	2
+../MyString/mystring.c:32:6:my_strcat_fixed_sym	3
+../MyString/mystring.c:46:6:my_strcat	2
+../MyString/mystring.c:72:7:my_strcpy_mem	2
+../MyString/mystring.c:91:6:my_strset	1
+../MyString/mystring.c:104:7:my_strsplice	8
+../MyString/mystring.c:139:7:memstr	3

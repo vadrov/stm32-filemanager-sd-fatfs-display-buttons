@@ -10,6 +10,6 @@
 ../FileManager/filemanager.c:56:16:findext	16	static
 ../FileManager/filemanager.c:75:6:Dos866toCp1251	24	static
 ../FileManager/filemanager.c:208:13:FileManagerShow	984	static,ignoring_inline_asm
-../FileManager/filemanager.c:533:23:FileManagerNew	8	static
-../FileManager/filemanager.c:553:6:FileManagerDelete	8	static
-../FileManager/filemanager.c:567:6:FileManagerPopupWin	72	static
+../FileManager/filemanager.c:535:23:FileManagerNew	8	static
+../FileManager/filemanager.c:555:6:FileManagerDelete	8	static
+../FileManager/filemanager.c:569:6:FileManagerPopupWin	72	static

@@ -396,12 +396,14 @@ filemanager1:
        	/* выход, если режим выбора файлов неактивен */
        	if (fm->fl_no_use == File_Manager_Passive) return;
        	/* прямоугольник вокруг имени выбранного файла/подкаталога */
-       	LCD_DrawRectangle(fm->lcd,
-       					  fm->x,
-						  fm->y + fm->pos_y * fm->font->height,
-						  fm->x + win_wdt_int - vert_scroll_enable * fm->font->width - 1,
-						  fm->y + (fm->pos_y + 1) * fm->font->height - 1,
-						  color_scheme->cursor_color);
+       	if (!color_scheme->fl_cursor_fill) {
+       		LCD_DrawRectangle(fm->lcd,
+       					      fm->x,
+						      fm->y + fm->pos_y * fm->font->height,
+						      fm->x + win_wdt_int - vert_scroll_enable * fm->font->width - 1,
+						      fm->y + (fm->pos_y + 1) * fm->font->height - 1,
+						      color_scheme->cursor_color);
+       	}
        	/* вертикальная полоса прокрутки окна менеджера активна, если
        	   число строк, помещающихся в окне, меньше количества файлов/каталогов */
 #if (1)

@@ -99,9 +99,10 @@ static void set_sd_interface_speed(uint8_t speed)
 
 static BYTE spi_rw(BYTE wval)
 {
-	SPI_SD->DR = wval;
-	while(!(SPI_SD->SR & SPI_SR_RXNE));
-	return SPI_SD->DR;
+	*((volatile uint8_t *)&SPI_SD->DR) = wval;
+	while(!(SPI_SD->SR & SPI_SR_RXNE)) ;
+	while(SPI_SD->SR & SPI_SR_BSY) ;
+	return *((volatile uint8_t *)&SPI_SD->DR);
 }
 
 #define xmit_spi(dat)		 spi_rw(dat)
@@ -189,6 +190,7 @@ static void SPI_DMA_TransmitReceive(SPI_TransferType type, const BYTE* buff, uin
 	while ((dma_TX->CR & DMA_SxCR_EN) || (dma_RX->CR & DMA_SxCR_EN)) {__NOP();} //ждем отключения потоков DMA
 	//запрещаем SPI принимать запросы от потоков DMA
 	SPI_SD->CR2 &= ~(SPI_CR2_TXDMAEN | SPI_CR2_RXDMAEN);
+	while(SPI_SD->SR & SPI_SR_BSY) ; //ждем, когда spi освободится
 }
 
 #else
@@ -199,12 +201,13 @@ static void spi_r_multi(BYTE *rval, uint16_t cnt)
 
 	while(txCnt > 0)
 	{
-		SPI_SD->DR = 0xFF;
+		*((volatile uint8_t *)&SPI_SD->DR) = 0xFF;
 		txCnt--;
 		while(!(SPI_SD->SR & SPI_SR_RXNE));
-		*pRxData = SPI_SD->DR;
+		*pRxData = *((volatile uint8_t *)&SPI_SD->DR);
 		pRxData++;
 	}
+	while(SPI_SD->SR & SPI_SR_BSY) ; //ждем, когда spi освободится
 }
 #endif // SD_USE_DMA
 

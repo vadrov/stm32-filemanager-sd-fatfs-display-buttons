@@ -28,7 +28,7 @@
 ../Middlewares/Third_Party/FatFs/src/ff.c:2131:9:dir_read.constprop	32	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:2813:9:follow_path	48	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3260:9:f_mount	24	static
-../Middlewares/Third_Party/FatFs/src/ff.c:3308:9:f_open	88	static
+../Middlewares/Third_Party/FatFs/src/ff.c:3308:9:f_open	96	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3511:9:f_read	64	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3611:9:f_write	56	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:5917:6:putc_bfd	24	static
@@ -36,11 +36,11 @@
 ../Middlewares/Third_Party/FatFs/src/ff.c:3732:9:f_sync	32	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:3813:9:f_close	16	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4001:9:f_lseek	56	static
-../Middlewares/Third_Party/FatFs/src/ff.c:4162:9:f_opendir	24	static
+../Middlewares/Third_Party/FatFs/src/ff.c:4162:9:f_opendir	32	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4232:9:f_closedir	16	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4265:9:f_readdir	24	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4353:9:f_stat	72	static
-../Middlewares/Third_Party/FatFs/src/ff.c:4388:9:f_getfree	40	static
+../Middlewares/Third_Party/FatFs/src/ff.c:4388:9:f_getfree	48	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4475:9:f_truncate	24	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4525:9:f_unlink	136	static
 ../Middlewares/Third_Party/FatFs/src/ff.c:4620:9:f_mkdir	104	static
