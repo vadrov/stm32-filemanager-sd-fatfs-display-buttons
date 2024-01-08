@@ -1,4 +1,4 @@
-Copyright (C) 2022, VadRov, all right reserved.
+Copyright (C) 2022, VadRov, all right reserved / www.youtube.com/@VadRov / www.dzen.ru/vadrov
 
 # Проект демонстрирует работу файлового менеджера с использованием библиотеки FATFS
 
