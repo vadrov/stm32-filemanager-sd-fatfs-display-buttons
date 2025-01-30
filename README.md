@@ -1,33 +1,33 @@
 Copyright (C) 2022, VadRov, all right reserved / www.youtube.com/@VadRov / www.dzen.ru/vadrov
 
-# Проект демонстрирует работу файлового менеджера с использованием библиотеки FATFS
+# The project demonstrates the work of a file manager using the FATFS library
 
-Допускается свободное распространение без целей коммерческого использования.
-При коммерческом использовании необходимо согласование с автором.
-Распространятся по типу "как есть", то есть использование осуществляете на свой страх и риск.
-Автор не предоставляет никаких гарантий.
+Free distribution is allowed without commercial use.
+For commercial use, the consent of the author is required.
+Will be distributed "as is", that is, use at your own risk.
+The author does not provide any guarantees.
 
-# Основные возможности файлового менеджера:
-- Вывод менеджера в окне, параметры (координата верхнего левого угла, ширина и высота окна, шрифт, цвет) которого задает пользователь;
-- Сокращение имен файлов и каталогов (если они не помещаются в окне) по типу менеджера Total Commander;
-- Нет ограничений на количество файлов и подкаталогов в каталоге;
-- Запоминание позиции курсора в вышестоящем каталоге и восстановление этой позиции при возврате на него с вложенного подкаталога;
-- Вывод иконок (значков) файлов и каталогов;
-- Поддержка вложенных каталогов с уровнем вложенности, ограниченным размером оперативной памяти микроконтроллера.
-- Любое оформление интерфейса за счет использования цветовых схем.
-- Возврат выбранного имени файла и пути до него.
-- Возможность подключения любого варианта выбора управления менеджером: кнопки, энкодер, тачскрин без внесения изменений в код процедуры файлового менеджера. Для этого достаточно передавать значения (ключи кнопок) из внешних процедур опроса энкодера или тачскрина через буфер клавиш KEYB_key_buff модуля keyboard, т.е. эмулировать нажатия несуществующих кнопок. Буфер KEYB_key_buff при этом может заполнятся в  прерывании от энкодера или тачскрина.
+# Main features of the file manager:
+- Displaying the manager in a window, the parameters (coordinate of the upper left corner, width and height of the window, font, color) of which are specified by the user;
+- Abbreviation of file and directory names (if they do not fit in the window) like the Total Commander manager;
+- No restrictions on the number of files and subdirectories in a directory;
+- Remembering the cursor position in the parent directory and restoring this position when returning to it from a nested subdirectory;
+- Displaying icons (badges) of files and directories;
+- Support for nested directories with a nesting level limited by the size of the microcontroller's RAM.
+- Any interface design through the use of color schemes.
+- Return of the selected file name and path to it.
+- Possibility to connect any option of manager control selection: buttons, encoder, touchscreen without making changes to the code of the file manager procedure. To do this, it is enough to transfer values ​​(button keys) from external encoder or touchscreen polling procedures through the KEYB_key_buff key buffer of the keyboard module, i.e. emulate pressing non-existent buttons. The KEYB_key_buff buffer can be filled in the interrupt from the encoder or touchscreen.
 
-# Проект базируется на библиотеках автора:
-- драйвер работы с SD-картой по SPI c использованием DMA (https://www.youtube.com/watch?v=z99bLhlnukM)
-- драйвер для работы с дисплеями по SPI с использованием DMA (https://www.youtube.com/watch?v=8tIJ16riJqo)
-- модуль для работы с кнопками с фильтром дребезга, автоповтором и буферизацией ввода (https://www.youtube.com/watch?v=e-w5HS75neg)
-- процедуры работы со строками.
+# The project is based on the author's libraries:
+- driver for working with SD-card via SPI using DMA (https://www.youtube.com/watch?v=z99bLhlnukM)
+- driver for working with displays via SPI using DMA (https://www.youtube.com/watch?v=8tIJ16riJqo)
+- module for working with buttons with a bounce filter, auto-repeat and input buffering (https://www.youtube.com/watch?v=e-w5HS75neg)
+- procedures for working with strings.
 
-В видео рассказано о проекте:
+The video tells about the project:
  [![Watch the video](https://img.youtube.com/vi/4c_PwnasQvs/maxresdefault.jpg)](https://youtu.be/4c_PwnasQvs)
 
-Автор: **VadRov**
+Author: **VadRov**
 
-Контакты: [Youtube](https://www.youtube.com/@VadRov) [Дзен](https://dzen.ru/vadrov) [VK](https://vk.com/vadrov) [Telegram](https://t.me/vadrov_channel)\
-Поддержать автора: [donate.yoomoney](https://yoomoney.ru/to/4100117522443917)
+Contacts: [Youtube](https://www.youtube.com/@VadRov) [Dzen](https://dzen.ru/vadrov) [VK](https://vk.com/vadrov) [Telegram](https://t.me/vadrov_channel)\
+Donate: [donate.yoomoney](https://yoomoney.ru/to/4100117522443917)
