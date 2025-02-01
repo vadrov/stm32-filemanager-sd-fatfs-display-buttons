@@ -99,9 +99,10 @@ static void set_sd_interface_speed(uint8_t speed)
 
 static BYTE spi_rw(BYTE wval)
 {
+	while (!(SPI_SD->SR & SPI_SR_TXE)) { ; }
 	*((volatile uint8_t *)&SPI_SD->DR) = wval;
-	while(!(SPI_SD->SR & SPI_SR_RXNE)) ;
-	while(SPI_SD->SR & SPI_SR_BSY) ;
+	while(!(SPI_SD->SR & SPI_SR_RXNE)) { ; }
+	while(SPI_SD->SR & SPI_SR_BSY) { ; }
 	return *((volatile uint8_t *)&SPI_SD->DR);
 }
 
@@ -201,13 +202,14 @@ static void spi_r_multi(BYTE *rval, uint16_t cnt)
 
 	while(txCnt > 0)
 	{
+		while (!(SPI_SD->SR & SPI_SR_TXE)) { ; }
 		*((volatile uint8_t *)&SPI_SD->DR) = 0xFF;
 		txCnt--;
-		while(!(SPI_SD->SR & SPI_SR_RXNE));
+		while(!(SPI_SD->SR & SPI_SR_RXNE)) { ; }
 		*pRxData = *((volatile uint8_t *)&SPI_SD->DR);
 		pRxData++;
 	}
-	while(SPI_SD->SR & SPI_SR_BSY) ; //ждем, когда spi освободится
+	while(SPI_SD->SR & SPI_SR_BSY) { ; } //ждем, когда spi освободится
 }
 #endif // SD_USE_DMA
 
